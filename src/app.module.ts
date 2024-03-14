@@ -4,11 +4,12 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
 
+import { AuthModule } from './auth/auth.module';
 import { User } from './user/entities/user.entity';
+import { UserModule } from './user/user.module';
 import { Concert } from './user/entities/concert.entity';
+import { ConcertModule } from './concert/concert.module';
 import { Ticket } from './user/entities/ticket.entity';
 import { Seat } from './user/entities/seat.entity';
 
@@ -23,7 +24,7 @@ const typeOrmModuleOptions = {
     host: configService.get('DB_HOST'),
     port: configService.get('DB_PORT'),
     database: configService.get('DB_NAME'),
-    entities: [User, Concert, Ticket, Seat],
+    entities: [User, Concert, Ticket, Seat], // 엔티티는 반드시 여기에 명시!
     synchronize: configService.get('DB_SYNC'),
     logging: true,
   }),
@@ -47,6 +48,7 @@ const typeOrmModuleOptions = {
     TypeOrmModule.forRootAsync(typeOrmModuleOptions),
     AuthModule,
     UserModule,
+    ConcertModule,
   ],
   controllers: [],
   providers: [],

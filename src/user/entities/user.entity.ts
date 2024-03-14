@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  UpdateDateColumn,
   Entity,
   Index,
   JoinColumn,
@@ -37,7 +38,7 @@ export class User {
   @CreateDateColumn()
   createdAt: Date;
 
-  @CreateDateColumn()
+  @UpdateDateColumn()
   updateAt: Date;
 
   @OneToMany(() => Ticket, (ticket) => ticket.user, { nullable: false })

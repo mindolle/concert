@@ -1,3 +1,13 @@
+API : https://www.notion.so/3a9e2c37e13746ea87708d7f89fceef4?v=acb3953d50f8441db893845c39c63369
+
+ERD : https://drawsql.app/teams/-885/diagrams/typescript
+
+
+
+
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
